@@ -1,0 +1,37 @@
+body{
+    background-color:coral;
+    font-family: cursive;
+}
+/* All headings with class head */
+.head{
+    color: darkblue;
+}
+/* heading using class="bglime" */
+#bglime{
+    background-color: lime;
+}
+
+/* paragraph styling */
+p{
+    color: white;
+}
+/* second paragraph with id="para" */
+#para{
+    color: green;
+}
+
+/* two Lists */
+ul{
+    color: white;
+}
+
+ul li:first-child a{
+    color: yellow;
+}
+ul li:last-child a{
+    color: purple;
+}
+
+ol a{
+    color: blue;
+}
