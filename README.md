@@ -1,5 +1,15 @@
-#Hello world!
-#create a class box within which add an image 
-#within that classs box there is button
-#margin is used 25% of the screen from left to right
-#10% from top and bottom
+Task:5 
+CSS hero section _Laundry service
+This project uses the css display like inline, block & inline-block and also uses the float and position
+
+Structure:
+1. Navbar: with logo , nav links and username
+2. Hero section: contains two div:
+    hero-left: contains heading, paragraph and button.
+    hero-right: cantains image
+    
+File organization:
+--->index.html
+--->style.css
+--->washing machine.jpg(image)
+--->README.md
