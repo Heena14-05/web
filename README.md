@@ -1,15 +1,14 @@
-Task:5 
-CSS hero section _Laundry service
-This project uses the css display like inline, block & inline-block and also uses the float and position
+Task:6
+CSS _Laundry service login page
 
-Structure:
-1. Navbar: with logo , nav links and username
-2. Hero section: contains two div:
-    hero-left: contains heading, paragraph and button.
-    hero-right: cantains image
-    
-File organization:
+
+files included:
 --->index.html
 --->style.css
 --->washing machine.jpg(image)
---->README.md
+--->README.md 
+    
+How to run
+1.download the project file
+2.open index.html file in any browser
+3.Web page will  be displayed
