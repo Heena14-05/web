@@ -3,33 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Laundry services</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <!-- left -->
-        <div class="left">
-            <img src="washing machine.jpg" alt="laundry">
+    <!-- navbar section -->
+    <header class="navbar">
+        <div class="logo"><a href="#">Logo</a></div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="username">
+            <span>Username</span>
         </div>
-        <!-- right -->
-        <div class="right">
-                <h2>Hello Again!</h2>
-                <p>Welcome Back we missed you!</p>
-                <!-- form section -->
-                <div class="login-form">
-                    <form action="">
-                    <label for="mail">Email</label>
-                    <input type="email" id="mail" placeholder="abc@gmail.com" required>
-                    <label for="password">Password</label>
-                    <input type="password" placeholder="Password" required>
-                    
-                    <a  class="forget" href="#">Forget Password</a>
-                    <button class="login-btn" type="submit">Login</button>
-                    <p>Not a member? <a href="#">Register now</a></p>
-                    </form> 
-                </div> 
-        </div>
-    </div>
+    </header>
+    <!-- hero section -->
+     <section class="hero">
+            <div class="heroleft">
+                <h1>Revitalize Your <br> Clothes with Expert <br> <span class="highlight">Laundry Services!</span></h1>
+                <p>
+                    From premium dry cleaning to swift wash and fold, we deliver care and convenience. Schedule a pickup and rediscover the freshness of your clothes today!
+                </p>
+                <button class="btn">Book Service Today</button>
+            </div>
+
+            <div class="heroright">
+                <img src="washing machine.jpg" alt="Laundry">
+            </div>
+     </section>
 </body>
 </html>
