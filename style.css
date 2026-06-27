@@ -19,6 +19,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 .logo a{
     text-decoration: none;
@@ -41,6 +42,12 @@ body{
 .nav>ul>li>a:hover{
     color: black;
 }
+.nav-right{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
 .username{
     display: inline-block;
     font-weight: 500;
@@ -55,7 +62,42 @@ body{
 .username:hover{
     background-color: #2563eb;
 }
-
+/* mobile view */
+.hamburger-btn{
+    display: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    outline: none;
+}
+.hamburger-btn .bar{
+    display: block;
+    width: 22px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+    margin: 4px 0;
+}
+.mobile-menu{
+    display: none;
+    
+}
+/* .mobile-menu ul{
+    list-style: none;
+    padding: 8px 0;
+}
+.mobile-menu ul li a{
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
+    color: #ffff;
+    padding: 10px 20px;
+    font-weight: 500;
+}
+.mobile-menu ul li a:hover{
+    background-color: #f5f9ff;
+    color: #007bff;
+} */
 /* hero section */
 
 .hero{
@@ -89,13 +131,15 @@ body{
     background-color: #3b82f6;
     color: white;
     border: none;
-    padding: 15px 15px;
+    padding: 16px 16px;
     font-size: 12px;
-    border-radius:20px;
+    border-radius:18px;
     font-weight: 600;
     cursor: pointer;
+    transition: 0.3s ease-in-out;
 }
 .btn:hover{
+    transform: scale(1.3)  rotate(-5deg);
     background-color: #2563eb;
 }
 .heroright{
@@ -112,7 +156,7 @@ body{
     .navbar{
         padding: 0 5%;
     }
-    .logo{
+    .logo a{
         font-size: 16px;
     }
     .nav ul{
@@ -142,9 +186,56 @@ body{
 }
 
 /* mobile view */
-@media(max-width:500px){
+@media(max-width:550px){
     .nav{
         display: none;
+    }
+    .hamburger-btn{
+        display: block;
+        position: relative;
+        z-index: 110; 
+    }
+    .mobile-menu{
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        height: 88vh;
+        z-index: 100;
+        /* border: none;
+        border-radius: 0;
+        text-align: center; */
+        transition: right 0.3s ease-in-out;
+        /* display: flex; */
+        align-items: center;
+        justify-content: center; 
+        background-color: #333;
+        flex-direction: column;
+    }
+    .mobile-menu ul{
+       width: 200px;
+       text-align: center;
+       padding: 0;
+       list-style: none;
+    } 
+    .mobile-menu ul li {
+        /* display: inline-block; */
+        /* font-size: 20px; */
+        margin: 25px 0;
+    }
+    .mobile-menu ul li a{
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 600;
+        font-size: 20px;
+    }
+    .hamburger-btn:focus + .mobile-menu{
+        right: 0;
+        display: flex;
+    }
+    .mobile-menu:bottom-focus, .navbar:focus-within .mobile-menu{
+        display: flex;
+        right: 0;
     }
     .hero{
         flex-direction: column;
@@ -159,6 +250,7 @@ body{
     .heroright{
         width: 100%;
         text-align: center;
+        order: -1;
     }
     .heroright img{
         width: 80%;
