@@ -1,30 +1,11 @@
-// find even or odd
+// Compound Interest
 
-let firstNum=10;
-let secondNum=5;
-let thirdNum=4;
-let fourthNum=17;
+let P= 5000;
+let r =0.07;
+let n= 4;
+let t= 3;
 
-if(firstNum %2 ==0){
-    console.log("The num", firstNum , "is even");   
-} else{
-    console.log("The num", firstNum , "is odd");   
-}
+let A= P* ((1+(r/n)) ** (n*t));
+let compoundInterest = A-P;
+console.log("The Compound Interest after", t, "years is:" ,compoundInterest.toFixed(2));
 
-if(secondNum %2 ==0){
-    console.log("The num", secondNum , "is even");   
-} else{
-    console.log("The num", secondNum , "is odd");   
-}
-
-if(thirdNum %2 ==0){
-    console.log("The num", thirdNum , "is even");   
-} else{
-    console.log("The num", thirdNum , "is odd");   
-}
-
-if(fourthNum %2 ==0){
-    console.log("The num", fourthNum , "is even");   
-} else{
-    console.log("The num", fourthNum , "is odd");   
-}
