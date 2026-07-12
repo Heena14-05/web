@@ -3,12 +3,340 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript</title>
+    <title>Thala 7 Sneaker Store</title>
     <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
 </head>
 <body>
+<!-- navbar -->
+    <header class="header">
+            <nav class="navbar">
+                <div class="logo">
+                    <h1>Thala <span>7.</span></h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="brands">Brands<i class="fa-solid fa-angle-down"></i></a> </li>
+                    <li><a href="more">More<i class="fa-solid fa-angle-down"></i></a></li>
+                    <li><a href="#contact">Contact</a></li>
 
-    
-    <script src="script.js"></script>
+                </ul>
+
+            <div class="nav-right">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass" ></i>
+                    <input type="text" placeholder="Search">
+                </div>
+                <div class="cart">
+                    <i class="fa-solid fa-bag-shopping" id="cart"></i>
+                    <span>0</span>
+                </div>
+                <img class="user" src="user-3.png" alt="userimg">
+            </div>
+            </nav>
+          
+
+            </div>
+    </header>
+<!-- hero section -->
+    <section class="hero">
+        <div class="left-hero">
+            <p class="brand-name">SEVEN</p>
+            <h1>7!! Thalla For<br>a
+                <span> Reason!</span>
+            </h1>
+            <p class="description">Premium sneakers made for comfort and style.
+                Step into Confidence with every move.
+            </p>
+            <button class="btn">Shop now</button>
+        </div>
+        <div class="right-hero">
+            <img src="sneaker.png" alt="Sneaker">
+        </div>
+    </section>
+
+<!-- hero services -->
+    <section class="hero-services">
+        <div class="services-items">
+            <div class="services-item">
+                <i class="fa-solid fa-heart"></i>
+                <h3>2k+ <br><span class="tagline">Reviews</span></h3>
+
+            </div>
+            <div class="services-item">
+                <i class="fa-solid fa-users"></i>
+                <div>
+                    <h3>30k+ <br><span class="tagline">Customres</span></h3>
+                </div>
+            </div>
+            <div class="services-item">
+                <i class="fa-solid fa-trophy"></i>
+                <div>
+                     <h3>High <br><span class="tagline">Quality</span></h3>
+                </div>
+            </div>
+            <div class="services-item">
+                <i class="fa-solid fa-star"></i>
+                <div>
+                    <h3>4.5/5 <br><span class="tagline">Rating</span></h3>
+                </div>
+            </div>
+
+        </div>
+    </section>
+<!-- product display -->
+    <section class="main" id="shopping">
+        <div class="top">
+            Home &nbsp;>&nbsp; THALA FOR A REASON &nbsp; >&nbsp; Seven By M.S Dhoni Women's Hogun Multi-Color Running Shoes
+        </div>
+        <div class="product-display">
+            <div class="product-img">
+                <img src="shopping (2).webp" alt="">
+            </div>
+      
+            <div class="product-details">
+                <h2>Seven By M.S Dhoni <br>
+                Women's Hogun Multi-Color <br>
+                Running Shoes
+                </h2>
+                <p class="product-des">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe maiores voluptatem blanditiis,
+                tempore asperiores et dignissimos amet harum aperiam praesentium!</p>
+            
+                <div class="price">
+                    <h3><i class="fa-solid fa-indian-rupee-sign"></i>1,334</h3>
+                <div class="sale">
+                    <h4>Save 12% </h4>
+                    <p>Inclusion of all Taxes</p>
+                </div>
+                </div>
+                <div class="cart-section">
+                <div class="quantity">
+                   <p>2<i class="fa-solid fa-angle-down"></i></p>
+                </div>
+                <button class="cart-btn">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    ADD TO CART</button>
+                </div>
+            </div>
+
+        </div>
+<!-- bottom gallery -->
+        <div class="bottom-gallery">
+            <div class="shoe-img">
+                <img src="shopping (1).webp" alt="">
+            </div>
+            <div class="shoe-img">
+                <img src="shopping (4).webp"  alt="">
+            </div>
+            <div class="shoe-img">
+                <img src="shopping (3).webp"  alt="">
+            </div>
+             <div class="shoe-img">
+                <img src="shopping.webp"  alt="">
+            </div>
+             <div class="shoe-img">
+                <img src="shopping (2).webp "  alt="">
+            </div>
+        </div>
+        
+    </section>
+    <!-- shopping cart -->
+     <section class="shopping">
+        <div class="left-container">
+            <h2>Shopping Cart</h2>
+            <div class="cart-table">
+                <div class="cart-heading">
+                    <p>Product</p>
+                    <p>Quantity</p>
+                    <p>Price</p>
+                    <p></p>
+                </div>
+                <div class="cart-item">
+                    <div class="product-name">
+                        <p>Seven By M.S Dhoni Women's Hogun Multi-Color Running Shoes</p>
+                    </div>
+
+                    <div class="cart-quantity">
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                    </div>
+                    <p class="price"><span><i class="fa-solid fa-indian-rupee-sign"></i>1,499</span></p>
+
+                    <button class="remove-btn">X</button>
+                </div>
+                <div class="cart-item">
+                    <div class="product-name">
+                        <p>Seven By M.S Dhoni Women's Hogun Multi-Color Running Shoes</p>
+                    </div>
+
+                    <div class="cart-quantity">
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                    </div>
+                    <p class="price"><span><i class="fa-solid fa-indian-rupee-sign"></i>1,499</span></p>
+
+                    <button class="remove-btn">X</button>
+                </div>
+                <div class="cart-item">
+                    <div class="product-name">
+                        <p>Seven By M.S Dhoni Women's Hogun Multi-Color Running Shoes</p>
+                    </div>
+
+                    <div class="cart-quantity">
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                    </div>
+                    <p class="price"><span><i class="fa-solid fa-indian-rupee-sign"></i>1,499</span></p>
+
+                    <button class="remove-btn">X</button>
+                </div>
+            </div>
+            <a href="#shopping" class="continue-shopping">
+            <i class="fa-solid fa-less-than"></i>
+            Continue Shopping
+        </a>
+        </div>
+        <div class="right-container">
+            <div class="right">     
+            <div class="cupon-code">
+                <label for="cupon">Enter Cupon Code</label>
+
+                <div class="cupon-box">
+                    <input type="text" id="cupon" placeholder="cupon code">
+                
+                    <button>Apply Cupon</button>
+                </div>
+            </div>
+            <div class="bill">
+                <span>Sub Total</span>
+                <p><i class="fa-solid fa-indian-rupee-sign"></i>1,400</p>
+            </div>
+             <div class="bill">
+                <span>Taxes(if applicable)</span>
+                <p><i class="fa-solid fa-indian-rupee-sign"></i>110</p>
+            </div>
+             <div class="bill">
+                <span>Discount</span>
+                <p><i class="fa-solid fa-indian-rupee-sign"></i>0</p>
+            </div>
+             <div class="bill total">
+                <span>Total</span>
+                <p><i class="fa-solid fa-indian-rupee-sign"></i>1,510</p>
+            </div>
+        </div>       
+            <button class="pay-now-btn">Pay Now <span><i class="fa-solid fa-indian-rupee-sign"></i></span> 1,510</button>
+            <div class="secure-icon">
+                <span><i class="fa-solid fa-shield-halved" style="color: rgb(21, 14, 14);"></i>Secure</span>
+                <span><i class="fa-solid fa-bolt" style="color: rgb(21, 14, 14);"></i>Razorpay</span>
+                <span><i class="fa-solid fa-lock" style="color: rgb(21, 14, 14);"></i> Safe</span>
+            </div>
+
+        </div>
+        
+     </section>
+
+     <!-- payment section -->
+      <section class="payment-section">
+        <div class="payment-section-left">
+            <h3>Checkout</h3>
+
+                <h2>Contact Details</h2>
+                <label for="email">Email ID</label>
+                <input type="email" placeholder="email">
+
+            <h2>Payment</h2>
+            <div class="make-payment">
+                <div class="method active">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <span>Card</span>
+                </div>
+                <div class="method">
+                    <i class="fa-solid fa-bitcoin-sign"></i>
+                    <span>Crypto</span>
+                </div>
+                <div class="method ">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <span>Bank</span>
+                </div>
+                <div class="method dots">
+                    <span><i class="fa-solid fa-ellipsis-vertical"></i></span>
+                </div>
+            </div>
+            <label>Card Number</label>
+            <input type="text" placeholder="1232 4562 7892 3456">
+            <div class="input-row">
+                <div>
+                    <label>Expiry</label>
+                    <input type="text" placeholder="MM/YY">
+                </div>
+           
+            <div>
+                <label>CVC</label>
+                <input type="text" placeholder="123">
+            </div>
+            </div>
+
+            <div class="input-row">
+                <div>
+                    <label>Country</label>
+                    <input type="text" placeholder="India">
+                </div>
+                <div>
+                    <label for="">Zip Code</label>
+                    <input type="text" placeholder="11001">
+                </div>
+            </div>
+
+        </div>
+
+            <div class="right-container">
+                <h2>Order Summary</h2>
+            <div class="right">     
+            <div class="cupon-code">
+                <label for="cupon">Enter Cupon Code</label>
+
+                <div class="cupon-box">
+                    <input type="text" id="cupon" placeholder="cupon code">
+                
+                    <button>Apply Cupon</button>
+                </div>
+            </div>
+            <div class="bill">
+                <span>Sub Total</span>
+                <p><i class="fa-solid fa-indian-rupee-sign"></i>1,400</p>
+            </div>
+             <div class="bill">
+                <span>Taxes(if applicable)</span>
+                <p><i class="fa-solid fa-indian-rupee-sign"></i>110</p>
+            </div>
+             <div class="bill">
+                <span>Discount</span>
+                <p><i class="fa-solid fa-indian-rupee-sign"></i>0</p>
+            </div>
+             <div class="bill total">
+                <span>Total</span>
+                <p><i class="fa-solid fa-indian-rupee-sign"></i>1,510</p>
+            </div>
+        </div>       
+            <button class="pay-now-btn">Pay Now <span><i class="fa-solid fa-indian-rupee-sign"></i></span> 1,510</button>
+
+            <div class="secure-icon">
+                <span><i class="fa-solid fa-shield-halved" style="color: rgb(21, 14, 14);"></i>Secure</span>
+                <span><i class="fa-solid fa-bolt" style="color: rgb(21, 14, 14);"></i>Razorpay</span>
+                <span><i class="fa-solid fa-lock" style="color: rgb(21, 14, 14);"></i> Safe</span>
+            </div>
+
+
+        </div>
+        
+
+            
+        </div>
+      </section>
 </body>
 </html>
