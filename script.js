@@ -1,37 +1,53 @@
-const testArray =[5,8,6,3,10,14];
 
-// named function
-function findMax(arr){
-    if (arr.length ===0) return null;
-    let max = arr[0];
-    for (let i =1; i< arr.length;i++){
-        if (arr[i] >max){
-            max= arr[i];
+// Division using Promise
+const divideNum=(a,b)=>{
+    return new Promise((resolve, reject) => {
+        console.log("Dividing",a ,"by" , b ,"...");
+
+        if(b===0){
+            reject("Error:Division by zero is not allowed.");
+        }else{
+            resolve(a/b);
         }
-    }
-    return max;
+        
+    })
 }
-// anonymous function
-const calculateSum = function(arr){
-    let sum =0;
-    for (let i=0; i< arr.length; i++){
-        sum+= arr[i];
+// 5 cases
+async function test() {
+    try {
+        console.log("Result",await divideNum(12,2));
+        
+    } catch (error) {
+        console.log(error);
+        
     }
-    return sum;
-};
-// arrow function 
-const countOdds =(arr)=>{
-    let count =0;
-    for (let i= 0; i<arr.length;i++){
-        if (arr[i]% 2!==0){
-            count++;
-        }
+    try {
+        console.log("Result",await divideNum(15,0));
+        
+    } catch (error) {
+        console.log(error);
+        
     }
-    return count;
+    try {
+        console.log("Result",await divideNum(68,2));
+        
+    } catch (error) {
+        console.log(error);
+        
+    }
+    try {
+        console.log("Result",await divideNum(100,2));
+        
+    } catch (error) {
+        console.log(error);
+        
+    }
+    try {
+        console.log("Result",await divideNum(52,0));
+        
+    } catch (error) {
+        console.log(error);
+        
+    }
 }
-
-console.log("Array:",testArray);
-console.log("Maximum number:",findMax(testArray));
-console.log("Sum of all elements:",calculateSum(testArray));
-console.log("Count of odd numbers:",countOdds(testArray));
-
+test();
