@@ -1,53 +1,107 @@
+const students = [
+    {
+        name:"Heena",
+        marks:"90%",
+        class:"10th"
+    },
+    {
+        name:"Anchal",
+        marks:"89%",
+        class:"12th"
+    },
+    {
+        name:"Riya",
+        marks:"88%",
+        class:"8th"
+    },
+    {
+        name:"Neha",
+        marks:"90%",
+        class:"12th"
+    },
+    {
+        name:"Rohan",
+        marks:"79%",
+        class:"9th"
+    },
+    {
+        name:"Aman",
+        marks:"96%",
+        class:"10th"
+    },
+    {
+        name:"Pooja",
+        marks:"69%",
+        class:"12th"
+    },
 
-// Division using Promise
-const divideNum=(a,b)=>{
-    return new Promise((resolve, reject) => {
-        console.log("Dividing",a ,"by" , b ,"...");
+    {
+        name:"Rohit",
+        marks:"85%",
+        class:"8th"
+    },
+    {
+        name:"Kajal",
+        marks:"78%",
+        class:"11th"
+    },
+    {
+        name:"Diya",
+        marks:"69%",
+        class:"6th"
+    },
 
-        if(b===0){
-            reject("Error:Division by zero is not allowed.");
-        }else{
-            resolve(a/b);
-        }
-        
-    })
+    {
+        name:"Nitin",
+        marks:"85%",
+        class:"7th"
+    },
+    {
+        name:"Shreya",
+        marks:"83%",
+        class:"11th"
+    },
+    {
+        name:"Sakshi",
+        marks:"56%",
+        class:"10th"
+    },
+
+    {
+        name:"Monika",
+        marks:"87%",
+        class:"8th"
+    },
+    {
+        name:"Harman",
+        marks:"90%",
+        class:"6th"
+    }
+];
+
+const cards =document.getElementById("studentcards");
+const search =document.getElementById("search");
+
+function displayStudent(data){
+    if(data.length ===0){
+        cards.innerHTML=`<p style="grid-column":1/-1; text-align:center; color:#888;>No student found.</p>`;
+        return;
+    }
+    cards.innerHTML=data.map(student=>
+        `<div class="card">
+            <p><strong>Student Name:</strong>${student.name}</p>
+            <p><strong>Marks:</strong>${student.marks}</p>
+            <p><strong>Class:</strong>${student.class}</p>
+            </div>`
+    ).join("");
 }
-// 5 cases
-async function test() {
-    try {
-        console.log("Result",await divideNum(12,2));
-        
-    } catch (error) {
-        console.log(error);
-        
-    }
-    try {
-        console.log("Result",await divideNum(15,0));
-        
-    } catch (error) {
-        console.log(error);
-        
-    }
-    try {
-        console.log("Result",await divideNum(68,2));
-        
-    } catch (error) {
-        console.log(error);
-        
-    }
-    try {
-        console.log("Result",await divideNum(100,2));
-        
-    } catch (error) {
-        console.log(error);
-        
-    }
-    try {
-        console.log("Result",await divideNum(52,0));
-        
-    } catch (error) {
-        console.log(error);
-        
-    }
+displayStudent(students);
+
+function filterStudents(){
+    const searchTerm = search.value.toLowerCase();
+
+    const filteredList = students.filter(student=> student.name.toLowerCase().includes(searchTerm));
+
+    displayStudent(filteredList);
 }
-test();
+document.getElementById("search-btn").addEventListener("click",filterStudents);
