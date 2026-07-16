@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Students</title>
+    <title>DOM</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="header-left">Hi,Username</div>
-        <button class="login-btn">Login</button>
+        <h1 id="greeting">Hello</h1>
     </header>
-    <div class="container">
-        <h2>Students Records</h2>
-        <div class="search-conatiner">
-            <input type="text" id="search" placeholder="Search Student">
-            <button id="search-btn">Search</button>
-        </div>
-        <div  id="studentcards" class="cards"></div>
+
+   <div class="container">
+        <div class="box" id="box-1" onclick="changeColor(this,'red')">Red</div>
+        <div class="box" id="box-2" onclick="changeColor(this,'blue')">Blue</div>
+        <div class="box" id="box-3" onclick="changeColor(this,'green')">Green</div>
+        <div class="box" id="box-4" onclick="changeColor(this,'yellow')">Yellow</div>
+   </div>
+
+    <div class="input-text">
+        <input class="input" id="name" type="text" placeholder="Enter your name">
+        <button class="btn" onclick="greetUser()">Greet</button>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
