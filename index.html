@@ -1,28 +1,105 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
 </head>
 <body>
     <header>
-        <h1 id="greeting">Hello</h1>
+        <div class="navbar">
+            <h1 class="logo">Logo</h1>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+            <div class="user">
+                <span class="username">Username</span>
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </div>
+        </div>
     </header>
+    <section class="conatiner">
+    <!-- left section -->
+        <div class="left-section">
+            <h2>Added Items</h2>
+            <table id="cartTable">
+                <tr>
+                    <th>S.no</th>
+                    <th>Service Name</th>
+                    <th>Price</th>
+                </tr>
+                <tbody id="cartItems">
+                    
+                </tbody>
+            </table>
+            <div id="emptyCartMesg" class="empty-mesg">
+                <span class="info-icon"><i class="fa-solid fa-circle-info"></i></span>
+                <p>No Items Added <br><small>Add items to the cart from the service bar</small></p>
+            </div>
+            <div class="total">
+                <strong>Total Amount</strong>
+                <span id="totalAmount">0.00</span>
+            </div>
+        <!-- booking form -->
+            <div class="booking">
+                <h3>Book Now</h3>
+                <form id="bookingForm">
+                   <div class="form-grp">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" placeholder="Full name" required>
+                   </div>
+                   <div class="form-row">
+                        <div class="form-grp">
+                        <label for="email">Email ID</label>
+                        <input type="email" id="email" placeholder="Enter email" required>
+                   </div>
+                        <div class="form-grp">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="Phone Number" required>
+                   </div>
+                   </div>
+                   <button type="submit" class="btn btn-book">Book Now</button>
+                   <p id="bookingMesg"></p>
+                </form>
+            </div>
+        </div>
+    <!-- right section -->
+        <div class="right-section">
+            <h2>Browse Our Services</h2>
+            <p class="desc">
+                Click on the add to cart button to add the services to your cart or press skip.
+            </p>
+            <hr>
+            <div class="service-display" id="serviceDisplay">
+                <div class="img-wrapper">
+                    <img id="serviceImage" src="/CSS/booking/images (1).jpg" alt="service Image">
+                </div>
+                <div class="info">
+                    <h3 id="serviceName">Service Name</h3>
+                    <div id="servicePrice" class="price-tag">0.00</div>
+                </div>
 
-   <div class="container">
-        <div class="box" id="box-1" onclick="changeColor(this,'red')">Red</div>
-        <div class="box" id="box-2" onclick="changeColor(this,'blue')">Blue</div>
-        <div class="box" id="box-3" onclick="changeColor(this,'green')">Green</div>
-        <div class="box" id="box-4" onclick="changeColor(this,'yellow')">Yellow</div>
-   </div>
+                <div class="action-btn">
+                    <button  class="btn btn-skip" id="skipBtn">Skip Item <span><i class="fa-solid fa-xmark"></i></span></button>
+                    <button class="btn btn-add" id="addBtn">Add Item <span><span><i class="fa-solid fa-plus"></i></span></button>
+                </div>
+                 
+            </div>
+            <hr>
+            <div class="footer-note">
+                <p> <span><i class="fa-solid fa-circle-info"></i></span> Add the item to the cart and book now</p>
+            </div>
+        </div>
 
-    <div class="input-text">
-        <input class="input" id="name" type="text" placeholder="Enter your name">
-        <button class="btn" onclick="greetUser()">Greet</button>
-    </div>
+    </section>
 
     <script src="script.js"></script>
 </body>
-</html>
+</html> 
+
