@@ -2,32 +2,32 @@ const services = [
     {
         name: "Dry Cleaning",
         price: 200.00,
-        image: "/CSS/booking/images (1).jpg"
+        image: "images (1).jpg"
     },
     {
         name: "Ironing",
         price: 150.00,
-        image: "/CSS/booking/ironing.jpg"
+        image: "ironing.jpg"
     },
     {
         name: "Wash & Fold",
         price: 300.00,
-        image: "/CSS/booking/wash and fold.jpg"
+        image: "wash and fold.jpg"
     },
     {
         name: "Stain Removal",
-        price: 500.00,
-        image: "/CSS/booking/stain removal.jpg"
+        price: 200.00,
+        image: "stain removal.jpg"
     },
     {
         name: "Carpet Cleaning",
         price: 650.00,
-        image: "/CSS/booking/carpet cleaning.jpg"
+        image: "carpet cleaning.jpg"
     },
      {
         name: "Leather Cleaning",
-        price: 650.00,
-        image: "/CSS/booking/leather cleaning.jpg"
+        price: 550.00,
+        image: "leather cleaning.jpg"
     }
 ];
 
@@ -71,7 +71,7 @@ function showService() {
 
     serviceImage.src = services[index].image;
     serviceName.innerHTML = services[index].name;
-    servicePrice.innerHTML= "$" + services[index].price;
+    servicePrice.innerHTML= `<i class="fa-solid fa-indian-rupee-sign"></i>` + services[index].price;
 }
 
 showService();
@@ -91,11 +91,11 @@ addBtn.addEventListener("click", function () {
     const row = document.createElement("tr");
     row.innerHTML=` <td>${cart.length}</td>
                     <td>${item.name}</td>
-                    <td>${item.price}</td>`;
+                    <td> ${item.price}</td>`;
 
     cartItems.appendChild(row);
 
-    totalAmount.innerHTML="$"+total;
+    totalAmount.innerHTML=`<i class="fa-solid fa-indian-rupee-sign"></i>`+total;
     index++;
 
     showService();
