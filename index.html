@@ -1,53 +1,117 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Laundry services</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 </head>
 <body>
-    <header>
-        <div class="navbar">
-            <h1 class="logo">Logo</h1>
-            <ul class="nav-links">
+    <!-- navbar section -->
+    <header class="navbar">
+        <div class="logo"><a href="#">Logo</a></div>
+        <nav class="nav">
+            <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Services</a></li>
-                <li><a href="#">Contact Us</a></li>
                 <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
             </ul>
-            <div class="user">
-                <span class="username">Username</span>
-                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </nav>
+
+        <div class="username">
+            <span>Username</span>
+        </div>
+        <button class="hamburger-btn">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#service">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div> 
+    </header>
+    <!-- hero section -->
+     <section class="hero" id="home" data-aos="fade-up">
+            <div class="heroleft">
+                <h1>Revitalize Your <br> Clothes with Expert <br> <span class="highlight">Laundry Services!</span></h1>
+                <p>
+                    From premium dry cleaning to swift wash and fold, we deliver care and convenience. Schedule a pickup and rediscover the freshness of your clothes today!
+                </p>
+                <button class="btn-book" id="book-now"><span><i class="fa-solid fa-bag-shopping"></i></span>Book a service today!</button>
+            </div>
+
+            <div class="heroright">
+                <img src="washing machine.jpg" alt="Laundry">
+            </div>
+     </section>
+    <!-- service overbiew section -->
+     <div class="service-overview" id="service" data-aos="zoom-in">
+        <div class="heading">
+            <h1>Our Achivements</h1>
+        </div>
+        <div class="services">
+            <h3>15+</h3>
+            <p>Laundry services</p>
+        </div>
+        <div class="services">
+            <h3>240+</h3>
+            <p>Happy customers</p>
+        </div>
+        <div class="services">
+            <h3>2+ Yrs</h3>
+            <p>Experience</p>
+        </div>
+     </div>
+     <!-- booking service section -->
+    <section class="booking" id="booking" data-aos="fade-right">
+        <div class="booking-left">
+            <h3>Our Services</h3>
+            <p>Click on the  Add button to Add the service to your cart.</p>
+            <hr>
+            <div id="serviceList" class="service-list">
+            </div>
+
+            <hr>
+
+            <div class="bottom-mesg">
+                <p><span><i class="fa-solid fa-circle-info"></i></span>Add the items to cart and book now</p>
             </div>
         </div>
-    </header>
-    <section class="conatiner">
-    <!-- left section -->
-        <div class="left-section">
-            <h2>Added Items</h2>
-            <table id="cartTable">
-                <tr>
-                    <th>S.no</th>
-                    <th>Service Name</th>
-                    <th>Price</th>
-                </tr>
-                <tbody id="cartItems">
+
+        <div class="booking-right">
+            <div class="added-items">
+                <h3>Added Items</h3>
+                <table id="cartTable">
+                    <tr>
+                        <th>S.no</th>
+                        <th>Service name</th>
+                        <th>Price</th>
+                    </tr>
+                    <tbody id="cartBody">
                     
                 </tbody>
-            </table>
-            <div id="emptyCartMesg" class="empty-mesg">
-                <span class="info-icon"><i class="fa-solid fa-circle-info"></i></span>
-                <p>No Items Added <br><small>Add items to the cart from the service bar</small></p>
+                </table>
+
+                    <div id="emptyCartMesg" class="empty-mesg">
+                        <span class="info-icon"><i class="fa-solid fa-circle-info"></i></span>
+                        <p>No Items Added <br><small>Add items to the cart from the service bar</small></p>
+                    </div>
+                    <hr>
+                    <div class="total">
+                        <strong>Total Amount</strong>
+                        <span id="total">0.00</span>
+                    </div>
             </div>
-            <div class="total">
-                <strong>Total Amount</strong>
-                <span id="totalAmount">0.00</span>
-            </div>
-        <!-- booking form -->
-            <div class="booking">
+            <div class="booking-form" >
                 <h3>Book Now</h3>
                 <form id="bookingForm">
                    <div class="form-grp">
@@ -64,42 +128,106 @@
                         <input type="tel" id="phone" placeholder="Phone Number" required>
                    </div>
                    </div>
-                   <button type="submit" class="btn btn-book">Book Now</button>
+                   <button type="submit" class="btn btn-book-now" id="btnBook">Book Now</button>
                    <p id="bookingMesg"></p>
                 </form>
             </div>
         </div>
-    <!-- right section -->
-        <div class="right-section">
-            <h2>Browse Our Services</h2>
-            <p class="desc">
-                Click on the add to cart button to add the services to your cart or press skip.
-            </p>
-            <hr>
-            <div class="service-display" id="serviceDisplay">
-                <div class="img-wrapper">
-                    <img id="serviceImage" src="images (1).jpg" alt="service Image">
-                </div>
-                <div class="info">
-                    <h3 id="serviceName">Service Name</h3>
-                    <div id="servicePrice" class="price-tag"><span><i class="fa-solid fa-indian-rupee-sign"></i>0.00</span></div>
-                </div>
 
-                <div class="action-btn">
-                    <button  class="btn btn-skip" id="skipBtn">Skip Item <span><i class="fa-solid fa-xmark"></i></span></button>
-                    <button class="btn btn-add" id="addBtn">Add Item <span><span><i class="fa-solid fa-plus"></i></span></button>
-                </div>
-                 
-            </div>
-            <hr>
-            <div class="footer-note">
-                <p> <span><i class="fa-solid fa-circle-info"></i></span> Add the item to the cart and book now</p>
-            </div>
-        </div>
+        
 
     </section>
 
-    <script src="script.js"></script>
-</body>
-</html> 
+    <!-- quality description section  -->
+     <section class="quality-des" data-aos="fade-up">
+        <div class="qualities">
+            <div>
+                <i class="fa-solid fa-medal"></i>
+                <h3>Premium services</h3>
+                <p>Expert care with high-quality cleaning for every fabric.
+                    We ensure your clothes look fresh, clean, and well-maintained.
+                </p>
+            </div>
+            <div>
+                <i class="fa-solid fa-headset"></i>
+                <h3>Quick Support</h3>
+                <p>Our support team is always ready to help you.
+                    Get fast responses to your queries and service requests.
+                </p>
+            </div>
+            <div>
+                <i class="fa-solid fa-truck-fast"></i>
+                <h3>Hassle free delivery</h3>
+                <p>Free pickup and doorstep delivery at your convenience.
+                    Save time with our reliable and on-time service.
+                </p>
+            </div>
+            <div>
+                <i class="fa-solid fa-rupee-sign"></i>
+                <h3>Affordable price</h3>
+                <p>Premium laundry services at budget-friendly prices.
+                    Enjoy excellent quality without spending more.
+                </p>
+            </div>
+        </div>
+     </section>
+     <!-- newsletter subscription section -->
+      <section class="newsletter-section" data-aos="fade-left">
+        <div class="news-letter">
+            <h1>Subscribe to our newsletter.</h1>
+        </div>
+        <div class="form-detail">
+            <div class="details">
+                <input type="text" id="subName" placeholder="Full Name">
+                <button class="btn-subscribe" id="btnSubscribe">Subscribe</button>         
+            </div>
+            <div class="details">
+                <input type="email" id="subEmail" placeholder="Email Id">
+            </div> 
+            <p id="subscribeMesg"></p>
+        </div>       
+        
+      </section>
+      <!-- footer section -->
+       <footer id="footer">
+        <div>
+            <h2>Logo</h2>
+            <h3>About Us</h3>
+            <p>Premium Laundry Services.</p>
+        </div>
+        <div>
+            <h3>Important Links</h3>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms</a>
+        </div>
+        <div>
+            <h3>Contact</h3>
+            <p>support@laundryhub.com</p>
+            <p>+91 9632587410</p>
+        </div>
+        <div>
+            <h3>Follow Us</h3>
+            <div class="social">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-twitter" ></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+        </div>
+       </footer>
 
+       <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+       <script>
+            emailjs.init("Vc4uqm_orIzWpAZcr");
+       </script>
+
+         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+
+       <script src="script.js"></script>
+</body>
+</html>
