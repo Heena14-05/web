@@ -1,149 +1,201 @@
 const services = [
-    {
-        name: "Dry Cleaning",
-        price: 200.00,
-        image: "images (1).jpg"
-    },
-    {
-        name: "Ironing",
-        price: 150.00,
-        image: "ironing.jpg"
-    },
-    {
-        name: "Wash & Fold",
-        price: 300.00,
-        image: "wash and fold.jpg"
-    },
-    {
-        name: "Stain Removal",
-        price: 200.00,
-        image: "stain removal.jpg"
-    },
-    {
-        name: "Carpet Cleaning",
-        price: 650.00,
-        image: "carpet cleaning.jpg"
-    },
-     {
-        name: "Leather Cleaning",
-        price: 550.00,
-        image: "leather cleaning.jpg"
-    }
-];
 
-let index = 0;
-let total = 0;
-let cart = [];
+{
+icon:"👕",
+name:"Dry Cleaning",
+price:100.00
+},
 
-const serviceImage = document.getElementById("serviceImage");
-const serviceName = document.getElementById("serviceName");
-const servicePrice = document.getElementById("servicePrice");
+{
+icon:"👕",
+name:"Wash & Fold",
+price:200.00
+},
 
-const addBtn = document.getElementById("addBtn");
-const skipBtn = document.getElementById("skipBtn");
+{
+icon:"👕",
+name:"Ironing",
+price:30.00
+},
 
-const cartItems = document.getElementById("cartItems");
-const totalAmount = document.getElementById("totalAmount");
-const emptyCartMesg = document.getElementById("emptyCartMesg");
+{
+icon:"👕",
+name:"Stain Removal",
+price:550.00
+},
 
-const bookingform = document.getElementById("bookingForm")
+{
+icon:"👕",
+name:"Leather & Suede Cleaning",
+price:800.00
+},
 
-// show service
-function showService() {
-
-    if(index >= services.length){
-        serviceImage.src="";
-        serviceImage.style.display="none";
-
-        serviceName.innerHTML ="No more services!";
-        servicePrice.innerHTML ="";
-
-        addBtn.disabled = true;
-        skipBtn.disabled = true;
-
-        addBtn.style.opacity=".5";
-        skipBtn.style.opacity="0.5";
-
-        return;
-    }
-
-    serviceImage.style.display ="block";
-
-    serviceImage.src = services[index].image;
-    serviceName.innerHTML = services[index].name;
-    servicePrice.innerHTML= `<i class="fa-solid fa-indian-rupee-sign"></i>` + services[index].price;
+{
+icon:"🥻",
+name:"Wedding Dress Cleaning",
+price:2000.00
 }
 
-showService();
+];
+
+const serviceList = document.getElementById("serviceList");
+const cartBody = document.getElementById("cartBody");
+const total = document.getElementById("total");
+const btnBook = document.getElementById("btnBook")
+const btnSubscribe = document.getElementById("btnSubscribe")
 
 
-// add button
-addBtn.addEventListener("click", function () {
+let cart =[];
 
-    const item = services[index];
 
-    cart.push(item);
+function displayService (){
+    serviceList.innerHTML="";
+    services.forEach((service,index)=>{
+        const isAdded = cart.includes(service);
+        serviceList.innerHTML+=`
+        <div class="service">
 
-    total += item.price;
+            <div class="service-des">    
+                <h4><span>${service.icon}</span>${service.name}</h4>
+                <span>₹${service.price}</span>
+            </div>
 
-    emptyCartMesg.style.display ="none";
+            <div class="btn-grp">
+                ${
+                    isAdded
+                    ? `<button class="remove-btn" onclick="removeItem(${index})">
+                        Remove Item
+                       </button>`
+                    : `<button class="add-btn" onclick="addItem(${index})">
+                        Add Item
+                       </button>`
+                }
+            </div>
 
-    const row = document.createElement("tr");
-    row.innerHTML=` <td>${cart.length}</td>
-                    <td>${item.name}</td>
-                    <td> ${item.price}</td>`;
+        </div>`
 
-    cartItems.appendChild(row);
+    })
+}
 
-    totalAmount.innerHTML=`<i class="fa-solid fa-indian-rupee-sign"></i>`+total;
-    index++;
+function addItem(index){
+     if (!cart.includes(services[index])) {
+        cart.push(services[index]);
+        emptyCartMesg.style.display ="none"; 
+    }
 
-    showService();
+    displayService(); 
+    updateCart();
+}
 
-});
+function removeItem(index){
+    cart = cart.filter(item => item !== services[index]);
 
-// skip button
-skipBtn.addEventListener("click",()=>{
+    displayService();
+    updateCart();
+}
 
-    index++;
-    showService();
+function updateCart() {
 
-});
+    cartBody.innerHTML = "";
 
-// booking
-const bookingMesg =document.getElementById("bookingMesg");
-bookingform.addEventListener("submit",function (e){
+    let total = 0;
+
+    cart.forEach((item, index) => {
+
+        total += item.price;
+
+        cartBody.innerHTML += `
+        <tr>
+            <td>${index + 1}</td>
+            <td>${item.name}</td>
+            <td>₹${item.price}</td>
+        </tr>
+        `;
+    });
+
+    document.getElementById("total").innerText = "₹" + total;
+}
+displayService();
+
+
+
+document.getElementById("book-now").onclick=function(){
+    document.getElementById("booking")
+    .scrollIntoView({
+        behavior:"smooth"
+    })
+}
+
+
+
+
+btnBook.addEventListener("click",function (e){
     e.preventDefault();
 
     const name= document.getElementById("fullname").value.trim();
     const email= document.getElementById("email").value.trim();
     const phone= document.getElementById("phone").value.trim();
+    const bookingMesg =document.getElementById("bookingMesg");
 
     if (cart.length===0){
         bookingMesg.innerHTML="Please add at least one service";
-        bookingMesg.className="error";
+        bookingMesg.style.color="red";
         return;
     }
     if (name===""|| email==="" ||phone===""){
         bookingMesg.innerHTML="Please fill the details.";
-        bookingMesg.className="error";
+        bookingMesg.style.color="red";
         return;
     }
-    bookingMesg.innerHTML="✅Booking Succesful!!";
-    bookingMesg.className="success";
-    bookingform.reset();
 
-    cart=[];
-    cartItems.innerHTML="";
-    emptyCartMesg.style.display="block";
-    totalAmount.innerHTML="0.00";
-    total=0;
-    index=0;
+    const totalAmount = document.getElementById("total").innerText;
 
-    addBtn.disabled=false;
-    skipBtn.disabled=false;
-    addBtn.style.opacity="1";
-    skipBtn.style.opacity="1";
-    showService();
+    const serviceNames = cart
+        .map(item=> item.name)
+        .join(", ");
+    emailjs.send("service_05osofh","template_h8oye7q",{
+        customer_name:name,
+        customer_email:email,
+        customer_phone:phone,
+        services:serviceNames,
+        total:totalAmount
+
+    }).then(function(){
+        bookingMesg.innerHTML="✅Booking Succesful!! <br> We get back to you";
+        bookingMesg.style.color="green";
+
+
+        cart=[];
+        index=0;
+        cartBody.innerHTML="";
+        emptyCartMesg.style.display="block";
+        updateCart();
+        
+        document.getElementById("fullname").value="";
+        document.getElementById("email").value="";
+        document.getElementById("phone").value="";
+    }).catch(function(){
+        bookingMesg.style.color="red";
+        bookingMesg.innerHTML="Booking Failed!!Try Again."
+    });
+    
+
+
+});
+
+
+btnSubscribe.addEventListener("click",function(){
+    const n=document.getElementById("subName").value.trim();
+    const e=document.getElementById("subEmail").value.trim();
+    const mesg=document.getElementById("subscribeMesg");
+
+    if(n===""|| e===""){
+        mesg.style.color="yellow";
+        mesg.innerHTML="Please fill details!";
+        return
+    }
+
+    mesg.style.color="white";
+    mesg.innerHTML="Subscribed Successfully!!✅";
 
 });
