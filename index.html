@@ -3,231 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laundry services</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
+    <title>Project Workspace</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
-    <!-- navbar section -->
-    <header class="navbar">
-        <div class="logo"><a href="#">Logo</a></div>
-        <nav class="nav">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
+    <!-- navbar -->
+    <nav class="sticky top-0 z-50 bg-white shadow">
+        <div class="w-6xl  m-auto p-3 flex justify-between">
+            <h1 class="text-2xl font-bold">
+            Project
+            </h1>
+            <ul class="items-center flex gap-8 text-gray-700 font-medium">
+                <li><a class="hover:text-gray-900" href="#">Product</a></li>
+                <li><a class="hover:text-gray-900" href="#">Solution</a></li>
+                <li><a class="hover:text-gray-900" href="#">Resources</a></li>
+                <li><a class="hover:text-gray-900" href="#">Pricing</a></li>
+                <li><a class="hover:text-gray-900 text-black text" href="#">Log in</a></li>
+
+                    <button class="bg-black text-white px-3 py-2 text-sm">Get AI Free</button>
             </ul>
-        </nav>
-
-        <div class="username">
-            <span>Username</span>
         </div>
-        <button class="hamburger-btn">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-        <div class="mobile-menu">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#service">Services</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-            </ul>
-        </div> 
-    </header>
-    <!-- hero section -->
-     <section class="hero" id="home" data-aos="fade-up">
-            <div class="heroleft">
-                <h1>Revitalize Your <br> Clothes with Expert <br> <span class="highlight">Laundry Services!</span></h1>
-                <p>
-                    From premium dry cleaning to swift wash and fold, we deliver care and convenience. Schedule a pickup and rediscover the freshness of your clothes today!
-                </p>
-                <button class="btn-book" id="book-now"><span><i class="fa-solid fa-bag-shopping"></i></span>Book a service today!</button>
-            </div>
-
-            <div class="heroright">
-                <img src="washing machine.jpg" alt="Laundry">
-            </div>
-     </section>
-    <!-- service overbiew section -->
-     <div class="service-overview" id="service" data-aos="zoom-in">
-        <div class="heading">
-            <h1>Our Achivements</h1>
-        </div>
-        <div class="services">
-            <h3>15+</h3>
-            <p>Laundry services</p>
-        </div>
-        <div class="services">
-            <h3>240+</h3>
-            <p>Happy customers</p>
-        </div>
-        <div class="services">
-            <h3>2+ Yrs</h3>
-            <p>Experience</p>
-        </div>
-     </div>
-     <!-- booking service section -->
-    <section class="booking" id="booking" data-aos="fade-right">
-        <div class="booking-left">
-            <h3>Our Services</h3>
-            <p>Click on the  Add button to Add the service to your cart.</p>
-            <hr>
-            <div id="serviceList" class="service-list">
-            </div>
-
-            <hr>
-
-            <div class="bottom-mesg">
-                <p><span><i class="fa-solid fa-circle-info"></i></span>Add the items to cart and book now</p>
+    </nav>
+    <!-- hero -->
+    <section class=" bg-linear-to-b from-orange-100 to-white">
+        <div class="text-center w-5xl m-auto px-8">
+            <h1 class="text-6xl font-bold leading-tight">Wite, plan, share.
+                <br>
+               <span> With AI at your side.</span>
+            </h1>
+            <p class="pt-2">It is the connected workspace where better, faster work happen. Now with AI.
+            </p>
+            <div class="mt-10 flex justify-center gap-3">
+                <button class="bg-black text-white px-6 py-3 rounded text-sm">
+                    Get AI Free → 
+                </button>
+                <button class="bg-blue-700 text-white px-6 py-3  rounded text-sm">
+                    Request a Demo
+                </button>
             </div>
         </div>
 
-        <div class="booking-right">
-            <div class="added-items">
-                <h3>Added Items</h3>
-                <table id="cartTable">
-                    <tr>
-                        <th>S.no</th>
-                        <th>Service name</th>
-                        <th>Price</th>
-                    </tr>
-                    <tbody id="cartBody">
-                    
-                </tbody>
-                </table>
+        <div class="relative mt-10">
+            <img src="./workspace.avif" alt="workspace" class="absolute w-90 left-1/3">
 
-                    <div id="emptyCartMesg" class="empty-mesg">
-                        <span class="info-icon"><i class="fa-solid fa-circle-info"></i></span>
-                        <p>No Items Added <br><small>Add items to the cart from the service bar</small></p>
+            <!-- floating cards -->
+            <div class="absolute top-10 left-20 bg-white shadow-xl p-5 w-64 z-20 rounded-xl ">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-orange-100 p-3">
+                        📋
                     </div>
-                    <hr>
-                    <div class="total">
-                        <strong>Total Amount</strong>
-                        <span id="total">0.00</span>
+                    <div>
+                        <h3 class="font-semibold text-lg">Task</h3>
+                        <p class="text-gray-500 text-sm">12 tasks completed today</p>
                     </div>
+                </div>
             </div>
-            <div class="booking-form" >
-                <h3>Book Now</h3>
-                <form id="bookingForm">
-                   <div class="form-grp">
-                        <label for="fullname">Full Name</label>
-                        <input type="text" id="fullname" placeholder="Full name" required>
-                   </div>
-                   <div class="form-row">
-                        <div class="form-grp">
-                        <label for="email">Email ID</label>
-                        <input type="email" id="email" placeholder="Enter email" required>
-                   </div>
-                        <div class="form-grp">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" placeholder="Phone Number" required>
-                   </div>
-                   </div>
-                   <button type="submit" class="btn btn-book-now" id="btnBook">Book Now</button>
-                   <p id="bookingMesg"></p>
-                </form>
+
+            <div class="absolute top-6 right-20 bg-white shadow-xl p-3 w-60 z-20 rounded-xl ">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12  bg-green-100 p-3">
+                        ✔️
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg">Project Status</h3>
+                        <p class="text-green-500 text-sm font-medium">On track</p>
+                    </div>
+                </div>
             </div>
+
+            <div class="absolute top-35 right-40 bg-white shadow-xl p-5 w-72 z-20 rounded-xl ">
+                <h3 class="font-semibold mb-4">Team Activity</h3>
+                <div class="flex items-center">
+                    <img src="./user-1.png" alt="user" class="w-10 h-10 rounded-full">
+                    <img src="./user-2.png" alt="user" class="w-10 h-10 rounded-full">
+                    <img src="./user-3.png" alt="user" class="w-10 h-10 rounded-full">
+                    <span class="text-gray-600 font-medium">+5 Online</span>
+                </div>
+            </div>
+
         </div>
-
-        
-
     </section>
 
-    <!-- quality description section  -->
-     <section class="quality-des" data-aos="fade-up">
-        <div class="qualities">
-            <div>
-                <i class="fa-solid fa-medal"></i>
-                <h3>Premium services</h3>
-                <p>Expert care with high-quality cleaning for every fabric.
-                    We ensure your clothes look fresh, clean, and well-maintained.
-                </p>
-            </div>
-            <div>
-                <i class="fa-solid fa-headset"></i>
-                <h3>Quick Support</h3>
-                <p>Our support team is always ready to help you.
-                    Get fast responses to your queries and service requests.
-                </p>
-            </div>
-            <div>
-                <i class="fa-solid fa-truck-fast"></i>
-                <h3>Hassle free delivery</h3>
-                <p>Free pickup and doorstep delivery at your convenience.
-                    Save time with our reliable and on-time service.
-                </p>
-            </div>
-            <div>
-                <i class="fa-solid fa-rupee-sign"></i>
-                <h3>Affordable price</h3>
-                <p>Premium laundry services at budget-friendly prices.
-                    Enjoy excellent quality without spending more.
-                </p>
-            </div>
-        </div>
-     </section>
-     <!-- newsletter subscription section -->
-      <section class="newsletter-section" data-aos="fade-left">
-        <div class="news-letter">
-            <h1>Subscribe to our newsletter.</h1>
-        </div>
-        <div class="form-detail">
-            <div class="details">
-                <input type="text" id="subName" placeholder="Full Name">
-                <button class="btn-subscribe" id="btnSubscribe">Subscribe</button>         
-            </div>
-            <div class="details">
-                <input type="email" id="subEmail" placeholder="Email Id">
-            </div> 
-            <p id="subscribeMesg"></p>
-        </div>       
-        
-      </section>
-      <!-- footer section -->
-       <footer id="footer">
-        <div>
-            <h2>Logo</h2>
-            <h3>About Us</h3>
-            <p>Premium Laundry Services.</p>
-        </div>
-        <div>
-            <h3>Important Links</h3>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms</a>
-        </div>
-        <div>
-            <h3>Contact</h3>
-            <p>support@laundryhub.com</p>
-            <p>+91 9632587410</p>
-        </div>
-        <div>
-            <h3>Follow Us</h3>
-            <div class="social">
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-twitter" ></i>
-                <i class="fa-brands fa-youtube"></i>
-            </div>
-        </div>
-       </footer>
-
-       <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-       <script>
-            emailjs.init("Vc4uqm_orIzWpAZcr");
-       </script>
-
-         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script>
-            AOS.init();
-        </script>
-
-       <script src="script.js"></script>
+    <div class="fixed bottom-6 right-6 z-50">
+        <button class="w-14 h-14 rounded bg-black text-white shadow-2xl">
+            💬
+        </button>
+    </div>
+    
 </body>
 </html>
