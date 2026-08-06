@@ -3,92 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Workspace</title>
+    <title>AppName Landing Page</title>
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
-    <!-- navbar -->
     <nav class="sticky top-0 z-50 bg-white shadow">
-        <div class="w-6xl  m-auto p-3 flex justify-between">
-            <h1 class="text-2xl font-bold">
-            Project
-            </h1>
-            <ul class="items-center flex gap-8 text-gray-700 font-medium">
-                <li><a class="hover:text-gray-900" href="#">Product</a></li>
-                <li><a class="hover:text-gray-900" href="#">Solution</a></li>
-                <li><a class="hover:text-gray-900" href="#">Resources</a></li>
-                <li><a class="hover:text-gray-900" href="#">Pricing</a></li>
-                <li><a class="hover:text-gray-900 text-black text" href="#">Log in</a></li>
+        <div class="max-w-7xl m-auto p-4  flex justify-between items-center">
+            <h1 class="font-bold text-2xl">🚀AppName</h1>
+            <ul class=" hidden md:flex text-gray-700 gap-8  items-center">
+                <li><a class="hover:text-indigo-600" href="#">Features</a></li>
+                <li><a class="hover:text-indigo-600" href="#">Pricing</a></li>
+                <li><a class="hover:text-indigo-600" href="#">About</a></li>
+                <li><a class="hover:text-indigo-600" href="#">Contact</a></li>
 
-                    <button class="bg-black text-white px-3 py-2 text-sm">Get AI Free</button>
+                <button class="bg-indigo-500 text-white rounded px-3 py-1 hover:bg-indigo-800">Get Started</button>
             </ul>
+            <button class="md:hidden text-3xl text-black"><i class="fa-solid fa-bars"></i></button>
         </div>
     </nav>
-    <!-- hero -->
-    <section class=" bg-linear-to-b from-orange-100 to-white">
-        <div class="text-center w-5xl m-auto px-8">
-            <h1 class="text-6xl font-bold leading-tight">Wite, plan, share.
-                <br>
-               <span> With AI at your side.</span>
-            </h1>
-            <p class="pt-2">It is the connected workspace where better, faster work happen. Now with AI.
-            </p>
-            <div class="mt-10 flex justify-center gap-3">
-                <button class="bg-black text-white px-6 py-3 rounded text-sm">
-                    Get AI Free → 
-                </button>
-                <button class="bg-blue-700 text-white px-6 py-3  rounded text-sm">
-                    Request a Demo
-                </button>
+
+    <!-- hero section -->
+     <section class="bg-linear-to-r from-indigo-600 to-purple-600 text-white">
+        <!-- left -->
+        <div class="max-w-7xl m-auto px-6 py-16 lg-py-24 flex flex-col lg:flex-row items-center gap-10">
+            <div class="lg:w-1/2 text-center lg:text-left">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold">
+                    Build Amazing Products Faster
+                </h1>
+                <p class="mt-8 text-lg text-gray-300">The all in one Platfrom form teams to collaborate, 
+                    build and ship products that users love.
+                </p>
+                <div class="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start gap-5">
+                    <button class="bg-white text-indigo-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100" >Start Free Trial</button>
+                    <button class="border-2 px-6 py-3 rounded-lg hover:bg-white hover:text-indigo-700 font-semibold">Watch Demo</button>
+                </div>
+            </div>
+            <!-- right -->
+            <div class="lg:w-1/2 ">
+                <img class="w-full lg:h-[400px] sm:h-80 h-64 object-cover rounded-2xl shadow-2xl" src="./working.webp" alt="working">
             </div>
         </div>
 
-        <div class="relative mt-10">
-            <img src="./workspace.avif" alt="workspace" class="absolute w-90 left-1/3">
+    </section>
+    <!-- features -->
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-7xl m-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">
+                Powerful Features
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg text-left hover:shadow-2xl md:text-center">
+                    <div class="text-6xl mb-5">
+                        ⚡
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Lightning Fast</h3>
+                    <p class="text-gray-600">Experience blazing-fast performance that helps
+                        your team build and launch projects more efficiently.
+                    </p>
+                </div>
 
-            <!-- floating cards -->
-            <div class="absolute top-10 left-20 bg-white shadow-xl p-5 w-64 z-20 rounded-xl ">
-                <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 bg-orange-100 p-3">
-                        📋
+                <div class="bg-white p-8 rounded-2xl shadow-lg text-left hover:shadow-2xl  md:text-center">
+                    <div class="text-6xl mb-5">
+                        🔒
                     </div>
-                    <div>
-                        <h3 class="font-semibold text-lg">Task</h3>
-                        <p class="text-gray-500 text-sm">12 tasks completed today</p>
+                    <h3 class="text-2xl font-bold mb-4">Secure</h3>
+                    <p class="text-gray-600">Your data is protected with enterprise-grade
+                        security and encrypted cloud storage.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg text-left hover:shadow-2xl  md:text-center">
+                    <div class="text-6xl mb-5">
+                        📊
                     </div>
+                    <h3 class="text-2xl font-bold mb-4">Analytics</h3>
+                    <p class="text-gray-600">Track your team productivity and monitor project
+                        performance with detailed insights.
+                    </p>
                 </div>
             </div>
-
-            <div class="absolute top-6 right-20 bg-white shadow-xl p-3 w-60 z-20 rounded-xl ">
-                <div class="flex items-center gap-3">
-                    <div class="w-12 h-12  bg-green-100 p-3">
-                        ✔️
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-lg">Project Status</h3>
-                        <p class="text-green-500 text-sm font-medium">On track</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="absolute top-35 right-40 bg-white shadow-xl p-5 w-72 z-20 rounded-xl ">
-                <h3 class="font-semibold mb-4">Team Activity</h3>
-                <div class="flex items-center">
-                    <img src="./user-1.png" alt="user" class="w-10 h-10 rounded-full">
-                    <img src="./user-2.png" alt="user" class="w-10 h-10 rounded-full">
-                    <img src="./user-3.png" alt="user" class="w-10 h-10 rounded-full">
-                    <span class="text-gray-600 font-medium">+5 Online</span>
-                </div>
-            </div>
-
         </div>
     </section>
-
-    <div class="fixed bottom-6 right-6 z-50">
-        <button class="w-14 h-14 rounded bg-black text-white shadow-2xl">
-            💬
-        </button>
-    </div>
-    
+    <!-- footer -->
+     <footer class="bg-gray-900 text-white py-6">
+        <div class="max-w-7xl m-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <h2 class="text-2xl font-bold">🚀AppName</h2>
+            <p class="text-gray-300 text-center">2026 AppName. All rights reserved.</p>
+        </div>
+     </footer>
 </body>
 </html>
