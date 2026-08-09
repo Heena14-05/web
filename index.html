@@ -3,96 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AppName Landing Page</title>
-
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
+    <title>Animation and UI Feedback</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- custome css -->
+    <style>
+        @keyframes fadeUp {
+            from{
+                opacity: 0;
+                transform: translateY(30px);
+            }to{
+                opacity: 1;
+                transform: translate(0);
+            }
+        }
+        .animate-fade{
+            animation: fadeUp 0.9s ease forwards;
+        }
+    </style>
 </head>
-<body>
-    <nav class="sticky top-0 z-50 bg-white shadow">
-        <div class="max-w-7xl m-auto p-4  flex justify-between items-center">
-            <h1 class="font-bold text-2xl">🚀AppName</h1>
-            <ul class=" hidden md:flex text-gray-700 gap-8  items-center">
-                <li><a class="hover:text-indigo-600" href="#">Features</a></li>
-                <li><a class="hover:text-indigo-600" href="#">Pricing</a></li>
-                <li><a class="hover:text-indigo-600" href="#">About</a></li>
-                <li><a class="hover:text-indigo-600" href="#">Contact</a></li>
-
-                <button class="bg-indigo-500 text-white rounded px-3 py-1 hover:bg-indigo-800">Get Started</button>
-            </ul>
-            <button class="md:hidden text-3xl text-black"><i class="fa-solid fa-bars"></i></button>
-        </div>
-    </nav>
-
-    <!-- hero section -->
-     <section class="bg-linear-to-r from-indigo-600 to-purple-600 text-white">
-        <!-- left -->
-        <div class="max-w-7xl m-auto px-6 py-16 lg-py-24 flex flex-col lg:flex-row items-center gap-10">
-            <div class="lg:w-1/2 text-center lg:text-left">
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold">
-                    Build Amazing Products Faster
-                </h1>
-                <p class="mt-8 text-lg text-gray-300">The all in one Platfrom form teams to collaborate, 
-                    build and ship products that users love.
-                </p>
-                <div class="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start gap-5">
-                    <button class="bg-white text-indigo-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100" >Start Free Trial</button>
-                    <button class="border-2 px-6 py-3 rounded-lg hover:bg-white hover:text-indigo-700 font-semibold">Watch Demo</button>
-                </div>
-            </div>
-            <!-- right -->
-            <div class="lg:w-1/2 ">
-                <img class="w-full lg:h-[400px] sm:h-80 h-64 object-cover rounded-2xl shadow-2xl" src="./working.webp" alt="working">
-            </div>
-        </div>
-
+<body class="bg-slate-900 text-white">
+    <section class="text-center mt-10">
+        <h1 class="text-3xl font-bold">Animation & UI Feedback</h1>
+        <p class="mt-4 text-slate-400">Hover, click and interact with the elements below.</p>
     </section>
-    <!-- features -->
-    <section class="py-20 bg-gray-100">
-        <div class="max-w-7xl m-auto px-6">
-            <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">
-                Powerful Features
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow-lg text-left hover:shadow-2xl md:text-center">
-                    <div class="text-6xl mb-5">
-                        ⚡
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Lightning Fast</h3>
-                    <p class="text-gray-600">Experience blazing-fast performance that helps
-                        your team build and launch projects more efficiently.
-                    </p>
-                </div>
 
-                <div class="bg-white p-8 rounded-2xl shadow-lg text-left hover:shadow-2xl  md:text-center">
-                    <div class="text-6xl mb-5">
-                        🔒
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Secure</h3>
-                    <p class="text-gray-600">Your data is protected with enterprise-grade
-                        security and encrypted cloud storage.
-                    </p>
-                </div>
+    <section class="max-w-7xl m-auto mt-15 px-10">
+        <h2 class="font-bold text-2xl mb-5">Built-in Animation</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-slate-800 rounded-xl text-center p-6">
+                <div class="w-10 h-10 m-auto rounded-full border-4 border-indigo-500 border-t-transparent animate-spin"></div>
+                <h3 class="mt-4 font-semibold">animate-spin</h3>
+                <p class="text-slate-400 mt-2">Loading spinner</p>
+            </div>
 
-                <div class="bg-white p-8 rounded-2xl shadow-lg text-left hover:shadow-2xl  md:text-center">
-                    <div class="text-6xl mb-5">
-                        📊
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Analytics</h3>
-                    <p class="text-gray-600">Track your team productivity and monitor project
-                        performance with detailed insights.
-                    </p>
+            <div class="bg-slate-800 rounded-xl text-center p-6">
+                <div class="relative w-10 h-10 m-auto">
+                    <div class="absolute inset-0 rounded-full bg-green-500 animate-ping "></div>
+                    <div class="relative w-10 h-10 rounded-full bg-green-500"></div>
                 </div>
+                <h3 class="mt-4 font-semibold">animate-ping</h3>
+                <p class="text-slate-400 mt-2">Notification</p>    
+            </div>
+
+            <div class="bg-slate-800 rounded-xl text-center p-6">
+                <div class="w-10 h-10 m-auto rounded-lg bg-purple-700 animate-pulse"></div>
+                <h3 class="mt-4 font-semibold">animate-pulse</h3>
+                <p class="text-slate-400 mt-2">Skeleton loader</p> 
+            </div>
+
+            <div class="bg-slate-800 rounded-xl text-center p-6">
+                <div class="w-10 h-10 m-auto rounded-full bg-orange-500 animate-bounce"></div>
+                <h3 class="mt-4 font-semibold">animate-pulse</h3>
+                <p class="text-slate-400 mt-2">Bounce indicator</p> 
             </div>
         </div>
     </section>
-    <!-- footer -->
-     <footer class="bg-gray-900 text-white py-6">
-        <div class="max-w-7xl m-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <h2 class="text-2xl font-bold">🚀AppName</h2>
-            <p class="text-gray-300 text-center">2026 AppName. All rights reserved.</p>
+
+    <section class="max-w-7xl m-auto px-10 mt-15">
+        <h2 class="text-2xl font-bold mb-5">Button Animation</h2>
+        <div class="flex flex-wrap gap-5">
+            <button class="px-6 py-3 rounded-lg bg-blue-600 transition hover:scale-110 active:scale-95">Scale Effect</button>
+            <button class="px-6 py-3 rounded-lg bg-purple-600 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-purple-500/30 active:scale-95 ">
+                Shadow + Scale
+            </button>
+            <button class="px-6 py-3 rounded-lg bg-green-600 transition-all duration-300 hover:bg-green-400 active:scale-95" >Color Transition</button>
+            <button class="px-6 py-3 rounded-lg bg-orange-500 transition-transform duration-300 hover:rotate-6 active:scale-95">Rotate Effect</button>
+            <button class="px-6 py-3 rounded-lg bg-pink-600 transition-all duration-300 hover:-translate-y-2 active:scale-95">Lift Effect</button>
+            <button class="px-6 py-3 rounded-lg bg-cyan-600 transition-all duration-300 hover:scale-110 hover: shadow-lg  hover:shadow-cyan-200/30  hover:-translate-y-2 active:scale-95">Combined</button>
         </div>
-     </footer>
+    </section>
+
+    <section class="max-w-7xl m-auto px-10 mt-15 mb-10">
+        <h2 class="text-2xl font-bold mb-5">Card Animation</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class=" group bg-slate-800 rounded-xl  p-6 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-2">
+                <div class="w-10 h-10  rounded-lg bg-blue-500 transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl group-hover:shadow-blue-400/20"></div>
+                <div class="mt-4 font-semibold">Lift & Shadow</div>
+                <p class="text-slate-500 mt-2">hover:translate-y-2 hover:shadow-xl</p>
+            </div>
+
+             <div class=" group bg-slate-800 rounded-xl  p-6 transition-all duration-300 hover:scale-105 hover:bg-slate-600">
+                <div class="w-10 h-10  rounded-lg bg-green-500 transition-all duration-300 group-hover:rotate-12"></div>
+                <div class="mt-4 font-semibold">Scale & Rotate</div>
+                <p class="text-slate-500 mt-2">hover:scale-105 group-hover:rotate-12</p>
+            </div>
+
+            <div class=" group bg-slate-800 rounded-xl  p-6 transition-all duration-300 hover:border-2 hover:border-purple-500">
+                <div class="w-10 h-10  rounded-lg bg-purple-500 transition-all duration-300 group-hover:translate-x-2"></div>
+                <div class="mt-4 font-semibold">Border reveal</div>
+                <p class="text-slate-500 mt-2">hover:border-purple-500</p>
+            </div>
+        </div>    
+    </section>
+
+    <section class="max-w-7xl m-auto px-10 mt-15 mb-10">
+        <h2 class="text-2xl font-bold mb-5">Notification Badges</h2>
+        <div class="flex gap-10">
+            <div class="bg-slate-700 p-5 rounded-2xl text-center relative">
+                    <div class="text-3xl">🔔</div>
+                    <span class="absolute -top-2 -right-3 w-6 h-6 rounded-full text-xs flex items-center justify-center animate-ping bg-red-500"></span>
+                    <span class="absolute -top-2 -right-3 w-6 h-6 rounded-full text-xs flex items-center justify-center  bg-red-500"></span>
+            </div>
+
+            <div class="bg-slate-700 p-5 rounded-2xl text-center relative">
+                    <div class="text-3xl">💬</div>
+                    <span class="absolute -top-2 -right-3 w-6 h-6 rounded-full text-xs flex items-center justify-center animate-pulse bg-green-500"></span>
+                    <span class="absolute -top-2 -right-3 w-6 h-6 rounded-full text-xs flex items-center justify-center ">3</span>
+            </div>
+
+            <div class="bg-slate-700 p-5 rounded-2xl text-center relative">
+                    <div class="text-3xl">📧</div>
+                    <span class="absolute -top-2 -right-3 w-6 h-6 rounded-full text-xs flex items-center justify-center animate-bounce bg-blue-500"></span>
+                    <span class="absolute -top-2 -right-3 w-6 h-6 rounded-full text-xs flex items-center justify-center animate-bounce">1</span>
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="max-w-7xl m-auto px-10 mt-15 mb-10">
+        <h2 class="text-2xl font-bold mb-5">Loading Status</h2>
+        <div class="grid md:grid-cols-3 gap-8 ">
+            <div class="bg-slate-800 rounded-xl p-5">
+                <div class="animate-pulse">
+                    <div class="h-12 w-12 bg-slate-700 rounded-lg mb-5"></div>
+                    <div class="h-4 bg-slate-700 rounded w-3/4 mb-2"></div>
+                    <div class="h-3 bg-slate-700 rounded w-full mb-2"></div>
+                    <div class="h-2 bg-slate-700 rounded w-5/6"></div>
+                </div>
+                <h3 class="font-semibold text-slate-600 mt-5">Skeleton Loader</h3>
+            </div>
+            <div class="bg-slate-800 rounded-xl  p-5">
+                <button class="px-6 py-3 rounded-lg bg-blue-600 flex items-center gap-3"> <span class="w-5 h-5 border-4 border-transparent rounded-full border-t-white animate-spin">
+                </span>Loading...</button>
+                <h3 class="font-semibold text-slate-600 mt-5">Button with spinner</h3>
+            </div>
+            <div class="bg-slate-800 rounded-xl p-6">
+                <div class="flex justify-center gap-3">
+                    <span class="w-4 h-4 rounded-full bg-purple-600 animate-bounce [animation-delay:0ms]"></span>
+                    <span class="w-4 h-4 rounded-full bg-purple-600 animate-bounce [animation-delay:200ms]"></span>
+                    <span class="w-4 h-4 rounded-full bg-purple-600 animate-bounce [animation-delay:400ms]"></span>
+                </div>
+                <h3 class="font-semibold text-slate-600 mt-5 text-center">Bouncing Dots</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl m-auto px-10 mt-15 mb-15">
+        <h2 class="text-2xl font-bold mb-5">Staggered Animations(Delays)</h2>
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="opacity-0 animate-fade [animation-delay:0ms] text-center bg-blue-600 p-6 rounded-2xl">
+                <h3>delay-0</h3>
+            </div>
+            <div class="opacity-0 animate-fade [animation-delay:150ms] text-center bg-purple-600 p-6 rounded-2xl">
+                <h3>delay-150</h3>
+            </div>
+            <div class="opacity-0 animate-fade [animation-delay:300ms] text-center bg-pink-600 p-6 rounded-2xl">
+                <h3>delay-300</h3>
+            </div>
+            <div class="opacity-0 animate-fade [animation-delay:500ms] text-center bg-orange-600 p-6 rounded-2xl">
+                <h3>delay-500</h3>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
